@@ -10,9 +10,9 @@ Add these below lines at the end of .bashrc :
 
 Build the kernel:
 
-		sudo chmod -R 777 * ~/android_kernel_micromax_a106/arm-eabi-4.8
-		cd ~/android_kernel_micromax_a106/kernel-3.10
-		export ARCH=arm && export ARCH_MTK_PLATFORM=mt6582 && export CROSS_COMPILE=~/android_kernel_micromax_a106/arm-eabi-4.8/bin/arm-eabi-
+		sudo chmod -R 777 * ~/android_kernel_huawei_h30u10-3.10/arm-eabi-4.8
+		cd ~/android_kernel_huawei_h30u10-3.10/kernel-3.10
+		export ARCH=arm && export ARCH_MTK_PLATFORM=mt6582 && export CROSS_COMPILE=~/android_kernel_huawei_h30u10-3.10/arm-eabi-4.8/bin/arm-eabi-
 		make clean
-		make a106_defconfig
+		make h30u10_defconfig
 		./build.sh
