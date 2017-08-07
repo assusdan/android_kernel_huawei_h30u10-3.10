@@ -1,4 +1,4 @@
-3.10.54 Kernel Source For Micromax Unite 2
+3.10.54 Kernel Source For Huawei H30U10
 ------
 
 		sudo apt-get install ccache
