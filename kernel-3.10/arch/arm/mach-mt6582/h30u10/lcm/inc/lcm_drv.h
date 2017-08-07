@@ -493,6 +493,8 @@ typedef struct
     unsigned int		compatibility_for_nvk;
     unsigned int		cont_clock;
     unsigned int		ufoe_enable;
+		unsigned int		ufoe_vlc_disable;
+		unsigned int		ufoe_vlc_cfg;
     
     unsigned int		lcm_int_te_monitor;
     unsigned int		lcm_int_te_period;
@@ -570,8 +572,8 @@ typedef struct
     int (*set_gpio_pull_enable)(unsigned int pin, unsigned char pull_en);
     
 } LCM_UTIL_FUNCS;
-
-
+#define DOT_INVERSION 1
+#define COLUMN_INVERSION 0
 typedef struct
 {
     const char* name;
@@ -595,10 +597,14 @@ typedef struct
     void (*set_pwm)(unsigned int divider);
     unsigned int (*get_pwm)(unsigned int divider);
     void (*set_backlight_mode)(unsigned int mode);
+    void  (*set_inversion_mode)(unsigned int mode);
+    unsigned int (*lcm_check_state)(void);
+    unsigned int (*lcm_check_inversion_set)(unsigned int mode);
     ///////////////////////////
 
     /////////////ESD_RECOVERY//////////////////////
     unsigned int (*esd_check)(void);
+	
     unsigned int  (*esd_recover)(void);
     unsigned int (*check_status)(void);
     unsigned int (*ata_check)(unsigned char *buffer);
@@ -612,6 +618,7 @@ typedef struct
 // ---------------------------------------------------------------------------
 
 const LCM_DRIVER* LCM_GetDriver(void);
+unsigned char which_lcd_module(void);
 unsigned char which_lcd_module_triple(void);
 
 #endif // __LCM_DRV_H__
