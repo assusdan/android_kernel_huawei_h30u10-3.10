@@ -160,6 +160,8 @@ extern ili9806e_fwvga_dsi_vdo_txd_lcm_drv;
 extern LCM_DRIVER r69431_hd720_dsi_vdo_lcm_drv;//add by ferhung
 extern LCM_DRIVER r61308_dsi_vdo_lcm_drv;//add by ferhung
 extern LCM_DRIVER nt35521_hd720_dsi_vdo_lcm_drv;//add by ferhung
+extern LCM_DRIVER nt35590_hd720_cmd_tm50_drv;//H30U10
+extern LCM_DRIVER otm1282a_hd720_dsi_cmd_drv;//H30U10
 
 LCM_DRIVER* lcm_driver_list[] = 
 { 
@@ -703,6 +705,16 @@ LCM_DRIVER* lcm_driver_list[] =
 #if defined(NT35521_HD720_DSI_VDO)
         &nt35521_hd720_dsi_vdo_lcm_drv,
 #endif
+
+# For H30U10
+#if defined(NT35590_HD720_CMD_TM50)
+        &nt35590_hd720_cmd_tm50_drv,
+#endif
+
+#if defined(OTM1282A_HD720_DSI_CMD)
+        &otm1282a_hd720_dsi_cmd_drv,
+#endif
+
 };
 
 #define LCM_COMPILE_ASSERT(condition) LCM_COMPILE_ASSERT_X(condition, __LINE__)
