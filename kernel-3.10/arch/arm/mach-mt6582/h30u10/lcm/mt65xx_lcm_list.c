@@ -706,7 +706,6 @@ LCM_DRIVER* lcm_driver_list[] =
         &nt35521_hd720_dsi_vdo_lcm_drv,
 #endif
 
-# For H30U10
 #if defined(NT35590_HD720_CMD_TM50)
         &nt35590_hd720_cmd_tm50_drv,
 #endif
